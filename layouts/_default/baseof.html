@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "header.html" . -}}
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCB40SPT6E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-FCB40SPT6E');
+        </script>
+
+        {{- partial "head.html" . -}}
+    </head>
     <body>
         <div class="content">
-        {{- partial "head.html" . -}}
-        {{- block "main" . }}{{- end }}
-        {{- partial "footer.html" . -}}
+            {{- partial "header.html" . -}}
+            {{- block "main" . }}{{- end }}
+            {{- partial "footer.html" . -}}
         </div>
     </body>
 </html>
