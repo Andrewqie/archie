@@ -28,15 +28,23 @@
 			{{ end }}
 			{{ end }}
 		</div>
-		{{- $.Scratch.Set "isDisqus" true -}}
-		<!-- Check if disqus short name is given -->
-		{{ if not .Site.DisqusShortname }}
-		{{- $.Scratch.Set "isDisqus" false -}}
-		{{ end }}
+		<!-- Giscus comments -->
+		<script src="https://giscus.app/client.js"
+       			data-repo="Andrewqie/myblog"
+        		data-repo-id="R_kgDOKt0wRQ"
+        		data-category="General"
+        		data-category-id="DIC_kwDOKt0wRc4CbWgA"
+        		data-mapping="pathname"
+        		data-strict="0"
+        		data-reactions-enabled="1"
+        		data-emit-metadata="0"
+        		data-input-position="top"
+        		data-theme="light"
+        		data-lang="en"
+        		crossorigin="anonymous"
+        		async>
+		</script>
 
-		{{- if eq ($.Scratch.Get "isDisqus") true -}}
-		{{- partial "disqus.html" . -}}
-		{{- end -}}
 	</article>
 </main>
 {{ end }}
